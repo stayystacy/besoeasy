@@ -10,10 +10,6 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Format
-        run: |
-          npx prettier --print-width 200 --write dist
-
       - name: IPFS
         env:
          IPFS_DEPLOY_CLOUDFLARE__API_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
