@@ -2,19 +2,27 @@ name: Build
 on: [push]
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
-        with:
-          persist-credentials: false
+ build-and-deploy:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Checkout 🛎️
+     uses: actions/checkout@v2.3.1
+     with:
+      persist-credentials: false
 
-      - name: IPFS
-        env:
-         IPFS_DEPLOY_CLOUDFLARE__API_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
-         IPFS_DEPLOY_CLOUDFLARE__ZONE: besoeasy.com
-         IPFS_DEPLOY_CLOUDFLARE__RECORD: _dnslink.besoeasy.com
+   - name: Intsall
+     run: |
+      npm i
 
-        run: |
-          npx ipfs-deploy -d cloudflare ./
+   - name: Build
+     run: |
+      npm run build
+
+   - name: IPFS
+     env:
+      IPFS_DEPLOY_CLOUDFLARE__API_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
+      IPFS_DEPLOY_CLOUDFLARE__ZONE: besoeasy.com
+      IPFS_DEPLOY_CLOUDFLARE__RECORD: _dnslink.besoeasy.com
+
+     run: |
+      npx ipfs-deploy -d cloudflare ./dist
