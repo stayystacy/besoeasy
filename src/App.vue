@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container max-w-4xl mx-auto px-10">
 		<mainc />
 		<social />
 		<contact />

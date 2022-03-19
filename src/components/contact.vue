@@ -1,6 +1,6 @@
 <template>
-	<div @mouseenter="fetcher()" class="py-20 max-w-4xl mx-auto">
-		<div class="max-w-4xl mx-auto text-gray-800 text-3xl font-bold text-center uppercase">Mail : {{ email }}</div>
+	<div @mouseenter="fetcher()" class="py-20">
+		<div class="ext-gray-800 text-3xl font-bold text-center uppercase">Mail : {{ email }}</div>
 	</div>
 </template>
 

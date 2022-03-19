@@ -1,5 +1,5 @@
 <template>
-	<div @mouseenter="fetcher()" class="py-52 max-w-4xl mx-auto text-gray-800 text-6xl font-bold text-center transform hover:scale-150 transition duration-1000">
+	<div @mouseenter="fetcher()" class="py-52 text-gray-800 text-6xl font-bold text-center transform hover:scale-150 transition duration-1000">
 		<div class="uppercase">{{ text }}</div>
 	</div>
 </template>
