@@ -1,9 +1,9 @@
 <template>
-	<div class="container max-w-4xl mx-auto px-10">
+	<div>
 		<mainc />
 		<social />
-		<contact />
 		<medium />
+		<contact />
 	</div>
 </template>
 
