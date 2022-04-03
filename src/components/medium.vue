@@ -49,8 +49,12 @@
 		},
 		methods: {
 			async fetchdata() {
-				const response = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40besoeasy');
-				this.posts = response.data.items;
+				try {
+					const response = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40besoeasy');
+					this.posts = response.data.items;
+				} catch (error) {
+					console.log(error);
+				}
 			},
 		},
 		async mounted() {
