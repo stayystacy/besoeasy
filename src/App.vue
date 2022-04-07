@@ -1,9 +1,8 @@
 <template>
-	<div>
+	<div class="container max-w-7xl mx-auto px-10">
 		<mainc />
 		<social />
 		<medium />
-		<contact />
 	</div>
 </template>
 
@@ -12,8 +11,6 @@
 
 	import social from './components/social.vue';
 
-	import contact from './components/contact.vue';
-
 	import medium from './components/medium.vue';
 
 	export default {
@@ -21,7 +18,6 @@
 		components: {
 			mainc,
 			social,
-			contact,
 			medium,
 		},
 	};
